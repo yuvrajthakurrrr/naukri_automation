@@ -1,0 +1,166 @@
+%-------------------------
+% Rezume, a latex resume template for developers
+% Author : Nanu Panchamurthy (modified)
+%-------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+%------------PACKAGES----------------
+\usepackage{verbatim}
+\usepackage{titlesec}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{latexsym}
+\usepackage{marvosym}
+\usepackage{fullpage} % removed invalid option [empty]
+\usepackage[hidelinks]{hyperref}
+\usepackage[normalem]{ulem}
+\usepackage[english]{babel}
+%-----------------------------------------
+
+% only input glyphtounicode if it exists (avoid compile error if missing)
+\IfFileExists{glyphtounicode.tex}{\input{glyphtounicode.tex}}{}
+\pdfgentounicode=1
+
+%----------FONT OPTIONS-------------------
+\usepackage[default]{sourcesanspro} % ensure this package is installed; otherwise remove or replace
+\urlstyle{same}
+%-----------------------------------------
+
+%----------MARGIN & PAGE OPTIONS-----------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0in}
+\renewcommand{\footrulewidth}{0in}
+\setlength{\tabcolsep}{0in}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\textheight}{1.0in}
+
+\raggedbottom
+\raggedright
+%------------------------------------------
+
+%--------SECTIONING COMMANDS---------
+\titleformat{\section}
+  {\scshape\large}{}
+    {0em}{\color{black}}[\color{black}\titlerule\vspace{0pt}]
+%-------------------------------------
+
+%--------REDEFINITIONS----------------
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\ULdepth}{2pt}
+%-------------------------------------
+
+%--------CUSTOM COMMANDS--------------
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[rightmargin=0.11in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+\newcommand{\resumeSectionType}[3]{
+  \item\begin{tabular*}{0.96\textwidth}[t]{
+    p{0.15\linewidth}p{0.02\linewidth}p{0.81\linewidth}
+  }
+    \textbf{#1} & #2 & #3
+  \end{tabular*}\vspace{-2pt}
+}
+\newcommand{\resumeTrioHeading}[3]{
+  \item\small{
+    \begin{tabular*}{0.96\textwidth}[t]{
+      l@{\extracolsep{\fill}}c@{\extracolsep{\fill}}r
+    }
+      \textbf{#1} & \textit{#2} & #3
+    \end{tabular*}
+  }
+}
+\newcommand{\resumeQuadHeading}[4]{
+  \item
+  \begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}
+}
+\newcommand{\resumeQuadHeadingChild}[2]{
+  \item
+  \begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{\small#1} & {\small#2} \\
+  \end{tabular*}
+}
+\newcommand{\resumeHeadingListStart}{
+  \begin{itemize}[leftmargin=0.15in, label={}]
+}
+\newcommand{\resumeHeadingListEnd}{\end{itemize}}
+%-------------------------------------------
+
+%__________________RESUME____________________
+\begin{document}
+\thispagestyle{empty} % no header/footer on first page
+
+%-----------CONTACT DETAILS------------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Huge Yuvraj Singh \vspace{2pt}} &
+  \href{mailto:vikramsingh5682@gmail.com}{\uline{vikramsingh5682@gmail.com}} $|$ New Delhi $|$ +91 8077309048 \\
+  \href{https://www.linkedin.com/in/yuvrajthakur/}{\uline{LinkedIn}} $|$ \href{https://www.hackerrank.com/MrAmbusher}{\uline{HackerRank}} &
+\end{tabular*}
+
+%--------------------------------------------
+\section{Professional Summary}
+  \resumeHeadingListStart
+    {Data Engineer with 2 years of experience in implementing ETL pipelines, optimizing complex SQL queries and ability to leverage cloud technologies (Azure) and big data processing tools (PySpark) to assemble data for business insights. Actively implementing AI‑driven data solutions in projects, including Retrieval-Augmented Generation (RAG), LLM fine‑tuning, and orchestration of AI agents, enabling intelligent automation and unstructured data processing.}{}
+  \resumeHeadingListEnd
+
+%--------------------------------------------
+
+\section{Education}
+  \resumeHeadingListStart
+    \resumeQuadHeading{Meerut Institute of Engineering and Technology, M.I.E.T}{Meerut, India}
+    {Bachelor of Technology in Computer Science Engineering (B.Tech CSE-IOT)}{}
+  \resumeHeadingListEnd
+
+\section{Experience}
+  % start the itemize for experience entries
+  \resumeHeadingListStart
+    \resumeQuadHeading{Junior Data Engineer}{Feb 2025 -- Present}
+      {Nuvoretail}{Dwarka}
+      \resumeItemListStart
+        \resumeItem{Design and maintain complex data pipelines to extract, transform, and load product, pricing, and inventory data from various source systems into structured data warehouses for analytics and reporting.}
+
+        \resumeItem{
+        Developed a Retrieval-Augmented Generation (RAG) pipeline to enable semantic search and question-answering over unstructured documents (PDFs, text files). Orchestrated a seamless workflow combining retrieval of relevant context with an LLM to generate accurate, context-aware responses, significantly reducing information lookup time.}
+        
+        \resumeItem{Orchestrate automated ETL workflows using Python and SQL, incorporating robust error handling, session management, and data validation to ensure high data integrity and reliability.}
+      \resumeItemListEnd
+
+    \resumeQuadHeading{Data Analyst Trainee}{Aug 2024 -- Feb 2025}
+      {Nuvoretail}{Dwarka}
+      \resumeItemListStart
+        \resumeItem{Automated routine data consolidation tasks using Python scripts, transforming raw, unstructured data into standardized, analysis-ready formats for internal stakeholders.}
+        \resumeItem{Built a data pipeline to gathered the data of pan india level bakery resturants listed on swiggy portal and validate their FSSAI license numbers via the official FSSAI portal, enabling a client to target compliant businesses.}
+      \resumeItemListEnd
+  \resumeHeadingListEnd
+%---------------------------------------------
+
+\section{Personal Projects}
+  \resumeHeadingListStart
+    \resumeQuadHeading{Naukri.com Profile Updater}{Python, LLM, LangChain, Selenium}
+  {}{}{}
+      \resumeItemListStart
+        \resumeItem{Designed a fully automated system that extracts content from a LaTeX resume using DeepSeek‑V3 (NVIDIA NIM) and updates a Naukri profile daily.}
+        \resumeItem{Reduced profile maintenance time to zero by automating the entire process.}
+        \resumeItem{Implemented headless browser automation with robust error recovery and daily scheduling.}
+      \resumeItemListEnd
+  \resumeHeadingListEnd
+
+\section{Technical Skills}
+  \resumeHeadingListStart
+    \resumeSectionType{Languages}{:}{Python (Advanced), SQL (Advanced), PySpark, KornShell}
+    \resumeSectionType{Cloud Services}{:}{Azure Web App, Data Lake, Azure Data Factory (ADF), Apache Airflow, PySpark, ETL Pipeline Design, Data Warehousing, Data Modeling.}
+    \resumeSectionType{AI / LLM }{:}{RAG, LLMs, LangChain, Vector Databases (ChromaDB), Prompt Engineering}
+    \resumeSectionType{Other skills}{:}{Git, CI/CD (GitHub Actions), FastAPI, Selenium (For Automation), Pandas}
+  \resumeHeadingListEnd
+%--------------------------------------------
+
+\end{document}
