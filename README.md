@@ -37,8 +37,5 @@ Automatically update your Naukri.com profile with optimized sections extracted f
 ## 🤝 Contributing
 Contributions are welcome! Please open an issue or submit a pull request for improvements, bug fixes, or additional features (e.g., updating employment details, education, etc.).
 
-## 📄 License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
 ## 🔗 Keywords
 naukri.com resume parser AI resume updater LangChain NVIDIA AI Selenium automation LaTeX resume job search automation Python profile optimizer
